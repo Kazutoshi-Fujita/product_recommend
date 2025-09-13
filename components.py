@@ -69,6 +69,27 @@ def display_product(result):
             価格：{product['price']}
     """)
 
+    # 在庫状況の表示
+    if product['stock_status'] == '残りわずか':
+        st.markdown(
+            f"""
+            <div style="background-color: {ct.STOCK_LOW_BACKGROUND_COLOR}; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                <span style="color: {ct.STOCK_LOW_ICON_COLOR}; font-size: 20px;">&#9888;</span>
+                ご好評につき、在庫数が残りわずかです。購入をご希望の場合、お早めのご注文をおすすめいたします
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    elif product['stock_status'] == '在庫切れ':
+        st.markdown(
+            f"""
+            <div style="background-color: {ct.STOCK_OUT_BACKGROUND_COLOR}; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                <span style="color: {ct.STOCK_OUT_ICON_COLOR}; font-size: 20px;">&#9432;</span>
+                申し訳ございませんが、本商品は在庫切れとなっております。入荷までもうしばらくおまちください
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
     # 「商品カテゴリ」と「メーカー」と「ユーザー評価」
     st.code(f"""
         商品カテゴリ：{product['category']}\n

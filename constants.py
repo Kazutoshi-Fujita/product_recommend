@@ -16,6 +16,11 @@ ERROR_ICON = ":material/error:"
 CHAT_INPUT_HELPER_TEXT = "こちらからお探しの商品の特徴や名前を入力してください。"
 SPINNER_TEXT = "レコメンドする商品の検討中..."
 
+# 在庫状況表示用
+STOCK_LOW_BACKGROUND_COLOR = "#FFFACD"  # うすい黄色 (LemonChiffon)
+STOCK_LOW_ICON_COLOR = "#DAA520"      # △にビックリマークの色 (Goldenrod)
+STOCK_OUT_BACKGROUND_COLOR = "#FFC0CB"  # うすい赤 (Pink)
+STOCK_OUT_ICON_COLOR = "#FF0000"      # 〇にビックリマークの色 (Red)
 
 # ==========================================
 # ログ出力系
